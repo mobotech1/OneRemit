@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:card_view="http://schemas.android.com/tools"
+            app:cardElevation="10dp"
+            app:cardCornerRadius="10dp"
+            android:layout_margin="5dp"
+            card_view:cardCornerRadius="12dp"
+            card_view:cardElevation="3dp"
+            android:id="@+id/loading"
+            card_view:contentPadding="4dp"
+            app:cardBackgroundColor="@color/common_google_signin_btn_text_dark_pressed"
+            android:foreground="?selectableItemBackground"
+            android:clickable="true">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:background="@color/colorwhite">
+
+                <RelativeLayout
+                    android:id="@+id/relativeLayout2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/item_image"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="10dp">
+
+                    <ImageButton
+                        android:id="@+id/search_btn"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@color/colorAccent"
+                        android:padding="8dp"
+                        android:src="@drawable/ic_search_black_24dp"
+                        android:tint="@color/common_google_signin_btn_text_dark_pressed" />
+
+                    <EditText
+                        android:id="@+id/search_field"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@+id/search_btn"
+                        android:layout_alignParentTop="true"
+                        android:background="@color/common_google_signin_btn_text_light_disabled"
+                        android:paddingLeft="20dp"
+                        android:textSize="15sp"
+                        android:layout_toRightOf="@+id/search_btn"
+                        android:ems="10"
+                        android:inputType="textPersonName"
+                        android:hint="Search..."
+                        android:tint="@color/common_google_signin_btn_text_dark_pressed" />
+
+
+
+                    <TextView
+                        android:id="@+id/advertise"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/search_field"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="10dp"
+                        android:textAlignment="center"
+                        android:text="Recent Payments"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="12sp" />
+                </RelativeLayout>
+
+
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/loading"
+            android:id="@+id/recyclerview">
+
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+
+    </RelativeLayout>
+
+</LinearLayout>

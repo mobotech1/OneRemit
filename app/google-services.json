@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "801388343201",
+    "firebase_url": "https://feed-bcf4e.firebaseio.com",
+    "project_id": "feed-bcf4e",
+    "storage_bucket": "feed-bcf4e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:801388343201:android:46372af0102988efb0e5e0",
+        "android_client_info": {
+          "package_name": "com.digiplay.feed"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "801388343201-mh27vk6m1dgs31lm8nri2lhm9uku12d3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.digiplay.feed",
+            "certificate_hash": "11021082c5ec780b03ce7d125043c891a6bb07ce"
+          }
+        },
+        {
+          "client_id": "801388343201-7jjs1v6795hfg1hkma66i84kijs00v8q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA8h5H8ICWVaGTOCmcaPEmVIh6WPeqteFE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "801388343201-7jjs1v6795hfg1hkma66i84kijs00v8q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
