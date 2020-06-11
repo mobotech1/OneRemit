@@ -15,15 +15,20 @@
         android:layout_height="wrap_content"
         android:background="@color/white"
         android:orientation="vertical">
-    <TextView
-        android:layout_width="match_parent"
-        android:id="@+id/name"
-        android:textSize="20dp"
-        android:paddingTop="15dp"
-        android:layout_height="wrap_content"
-        android:textAlignment="center"
-        android:textColor="@color/colorAccent"
-        android:text="Merchant Name"/>
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/calibri"
+            android:text="Pay Merchant"
+            android:textColor="#171D33"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginLeft="16dp" />
 
 
 
