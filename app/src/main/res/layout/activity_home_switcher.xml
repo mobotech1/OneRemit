@@ -100,16 +100,16 @@
                     android:padding="24dp">
 
                     <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
                         android:layout_gravity="center"
                         android:layout_marginBottom="20dp"
-                        android:src="@drawable/information" />
+                        android:src="@drawable/ic_info_black_24dp" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/calibri"
+                        android:fontFamily="@font/gotham"
                         android:gravity="center"
                         android:text="Profile"
                         android:textColor="#3B414B"
@@ -140,16 +140,16 @@
                     android:padding="24dp">
 
                     <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
                         android:layout_gravity="center"
                         android:layout_marginBottom="20dp"
-                        android:src="@drawable/password" />
+                        android:src="@drawable/ic_lock_black_24dp" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/calibri"
+                        android:fontFamily="@font/gotham"
                         android:gravity="center"
                         android:text="Sign Out"
                         android:textColor="#3B414B"
@@ -181,16 +181,16 @@
                     android:padding="24dp">
 
                     <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
                         android:layout_gravity="center"
                         android:layout_marginBottom="20dp"
-                        android:src="@drawable/email" />
+                        android:src="@drawable/ic_touch_app_black_24dp" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/calibri"
+                        android:fontFamily="@font/gotham"
                         android:gravity="center"
                         android:text="Pay Merchant"
                         android:textColor="#3B414B"
@@ -221,16 +221,16 @@
                     android:padding="24dp">
 
                     <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
                         android:layout_gravity="center"
                         android:layout_marginBottom="20dp"
-                        android:src="@drawable/phone" />
+                        android:src="@drawable/ic_style_black_24dp" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/calibri"
+                        android:fontFamily="@font/gotham"
                         android:gravity="center"
                         android:text="Get Paid"
                         android:textColor="#3B414B"
@@ -262,16 +262,16 @@
                     android:padding="24dp">
 
                     <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
                         android:layout_gravity="center"
                         android:layout_marginBottom="20dp"
-                        android:src="@drawable/notifications" />
+                        android:src="@drawable/ic_lightbulb_outline_black_24dp" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/calibri"
+                        android:fontFamily="@font/gotham"
                         android:gravity="center"
                         android:text="Pay Bill"
                         android:textColor="#3B414B"
@@ -302,18 +302,18 @@
                     android:padding="24dp">
 
                     <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
                         android:layout_gravity="center"
                         android:layout_marginBottom="20dp"
-                        android:src="@drawable/currency" />
+                        android:src="@drawable/ic_history_black_24dp" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/calibri"
+                        android:fontFamily="@font/gotham"
                         android:gravity="center"
-                        android:text="Payments History"
+                        android:text="Transactions"
                         android:textColor="#3B414B"
                         android:textSize="16sp" />
 
@@ -344,18 +344,18 @@
                     android:padding="24dp">
 
                     <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
                         android:layout_gravity="center"
                         android:layout_marginBottom="20dp"
-                        android:src="@drawable/language" />
+                        android:src="@drawable/ic_favorite_black_24dp" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/calibri"
+                        android:fontFamily="@font/gotham"
                         android:gravity="center"
-                        android:text="Terms and Conditions"
+                        android:text="Service Terms"
                         android:textColor="#3B414B"
                         android:textSize="16sp" />
 
@@ -384,18 +384,18 @@
                     android:padding="24dp">
 
                     <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
                         android:layout_gravity="center"
                         android:layout_marginBottom="20dp"
-                        android:src="@drawable/group" />
+                        android:src="@drawable/ic_help_black_24dp" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/calibri"
+                        android:fontFamily="@font/gotham"
                         android:gravity="center"
-                        android:text="About DigiPay"
+                        android:text="About"
                         android:textColor="#3B414B"
                         android:textSize="16sp" />
 
