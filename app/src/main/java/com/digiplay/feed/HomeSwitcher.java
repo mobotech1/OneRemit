@@ -31,7 +31,7 @@ public class HomeSwitcher extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //Cardview on click activity profile
-                Intent intent = new Intent(HomeSwitcher.this, OTP.class);
+                Intent intent = new Intent(HomeSwitcher.this, MyAccount.class);
                 startActivity(intent);
 
             }
@@ -82,8 +82,8 @@ public class HomeSwitcher extends AppCompatActivity {
         cardView6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Cardview on click activity History
-                Intent intent = new Intent(HomeSwitcher.this, OTP.class);
+                //Cardview on click activity pay History
+                Intent intent = new Intent(HomeSwitcher.this, PayHistory.class);
                 startActivity(intent);
 
             }
@@ -91,8 +91,8 @@ public class HomeSwitcher extends AppCompatActivity {
         cardView7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Cardview on click activity
-                Intent intent = new Intent(HomeSwitcher.this, OTP.class);
+                //Cardview on click activity terms
+                Intent intent = new Intent(HomeSwitcher.this,  About.class);
                 startActivity(intent);
 
             }
@@ -100,8 +100,8 @@ public class HomeSwitcher extends AppCompatActivity {
         cardView8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Cardview on click activity
-                Intent intent = new Intent(HomeSwitcher.this, OTP.class);
+                //Cardview on click activity about
+                Intent intent = new Intent(HomeSwitcher.this, About.class);
                 startActivity(intent);
 
             }

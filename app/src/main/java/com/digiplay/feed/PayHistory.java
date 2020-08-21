@@ -54,7 +54,7 @@ public class PayHistory extends AppCompatActivity {
         recyclerView = findViewById(R.id.recyclerview);
         mSearchField = (EditText) findViewById(R.id.search_field);
         recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getApplication()));
+        recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
 
         arrayList = new ArrayList<Model>();
         databaseReference = FirebaseDatabase.getInstance().getReference().child("Model").child("Payments");
