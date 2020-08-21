@@ -22,9 +22,9 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="24dp"
-            android:fontFamily="@font/calibri"
+            android:fontFamily="@font/gotham"
             android:text="My Cards"
-            android:textColor="#171D33"
+            android:textColor="@color/colorAccent"
             android:textSize="28sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
@@ -46,7 +46,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3"
-        app:tabIndicatorColor="#FF7D00"
+        app:tabIndicatorColor="@color/colorAccent"
         app:tabIndicatorHeight="2dp"
         app:tabMode="fixed"
         app:tabSelectedTextColor="@color/black"
@@ -55,12 +55,14 @@
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Card" />
+            android:text="Card"
+            android:fontFamily="@font/gotham"/>
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Bank" />
+            android:text="Bank"
+            android:fontFamily="@font/gotham"/>
 
     </com.google.android.material.tabs.TabLayout>
 
@@ -70,7 +72,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:paddingLeft="20dp"
-        android:fontFamily="@font/calibri"
+        android:fontFamily="@font/gotham"
         android:text="Select virtual card"
         android:textColor="@color/colorAccent"
         android:textSize="16sp"
@@ -130,6 +132,7 @@
                             android:layout_height="wrap_content"
                             android:gravity="right"
                             android:text="BALANCE:"
+                            android:fontFamily="@font/gotham"
                             android:padding="5dp"
                             android:textColor="@android:color/darker_gray"/>
                         <TextView
@@ -137,6 +140,7 @@
                             android:layout_height="wrap_content"
                             android:gravity="right"
                             android:text="$0.00"
+                            android:fontFamily="@font/gotham"
                             android:padding="5dp"
                             android:textColor="#FFFFFF"/>
                     </LinearLayout>
@@ -146,6 +150,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
+                    android:fontFamily="@font/gotham"
                     android:paddingLeft="10dp"                    android:textColor="@color/backgroundcolor"
                     android:layout_marginTop="10dp"
                     android:text="MOBILE NUMBER"/>
@@ -154,6 +159,7 @@
                     android:layout_height="wrap_content"
                     android:padding="5dp"
                     android:paddingLeft="20dp"
+                    android:fontFamily="@font/gotham"
                     android:id="@+id/accountnumber"
                     android:textColor="@android:color/darker_gray"
                     android:layout_marginTop="10dp"
@@ -164,6 +170,7 @@
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
                     android:id="@+id/username"
+                    android:fontFamily="@font/gotham"
                     android:textColor="@color/backgroundcolor"
                     android:paddingLeft="10dp"                    android:layout_marginTop="10dp"
                     android:text="CARDHOLDER NAME:"/>
@@ -175,6 +182,7 @@
                     android:text="MOBILE WALLET"
                     android:id="@+id/bankname"
                     android:padding="5dp"
+                    android:fontFamily="@font/gotham"
                     android:textColor="@android:color/darker_gray"/>
 
             </LinearLayout>
@@ -199,9 +207,9 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
-            android:background="@drawable/blackroundedbuttonshape"
+            android:background="@drawable/blueroundedbuttonshape"
             android:text="ADD NEW CARD"
-            android:fontFamily="sans-serif-medium"
+            android:fontFamily="@font/gotham"
             android:paddingBottom="5dp"
             android:textColor="@color/common_google_signin_btn_text_dark_pressed" />
         <TextView
@@ -219,7 +227,7 @@
             android:layout_marginRight="30dp"
             android:background="@drawable/blackroundedbuttonshape"
             android:text="REOMOVE CARD"
-            android:fontFamily="sans-serif-medium"
+            android:fontFamily="@font/gotham"
             android:textColor="@color/common_google_signin_btn_text_dark_pressed" />
 
     </LinearLayout>
