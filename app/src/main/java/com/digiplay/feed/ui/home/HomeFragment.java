@@ -32,23 +32,23 @@ public class HomeFragment extends Fragment {
                 ViewModelProviders.of(this).get(HomeViewModel.class);
         View root = inflater.inflate(R.layout.fragment_home, container, false);
 
-        otherMerchants = (CardView) root.findViewById(R.id.otherMerchants);
+       // otherMerchants = (CardView) root.findViewById(R.id.otherMerchants);
         bills = (CardView) root.findViewById(R.id.bills);
         airtime = (CardView) root.findViewById(R.id.airtime);
         transfer = (CardView) root.findViewById(R.id.transfer);
         shop = (CardView) root.findViewById(R.id.shop);
 
 
-        otherMerchants.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+      //  otherMerchants.setOnClickListener(new View.OnClickListener() {
+      //      @Override
+      //      public void onClick(View v) {
                 //Cardview on click activity
 
-                Intent DriverIntent = new Intent(getContext(), MerchantsActivity.class);
-                startActivity(DriverIntent);
+      //          Intent DriverIntent = new Intent(getContext(), MerchantsActivity.class);
+      //          startActivity(DriverIntent);
 
-            }
-        });
+     //       }
+    //    });
 
         bills.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -88,7 +88,7 @@ public class HomeFragment extends Fragment {
             public void onClick(View v) {
                 //Cardview on click activity
 
-                Intent DriverIntent5 = new Intent(getContext(), SlideshowFragment.class);
+                Intent DriverIntent5 = new Intent(getContext(), ShareFragment.class);
                 startActivity(DriverIntent5);
 
             }

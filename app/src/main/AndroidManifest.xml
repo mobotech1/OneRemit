@@ -20,18 +20,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MerchantsActivity"></activity>
+        <activity android:name=".PayHistory"></activity>
+        <activity android:name=".GetPaid" />
+        <activity android:name=".HomeSwitcher" />
+        <activity android:name=".MerchantsActivity" />
         <activity android:name=".AddCardActivity" />
         <activity android:name=".PayActivity" />
         <activity android:name=".VerifyPhoneActivity" />
         <activity android:name=".OTP" />
         <activity android:name="ui.share.ShareFragment" />
         <activity android:name=".ui.slideshow.SlideshowFragment" />
-
-
-
         <activity android:name=".SplashScreen">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

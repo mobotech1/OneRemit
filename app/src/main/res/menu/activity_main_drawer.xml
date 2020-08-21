@@ -7,7 +7,7 @@
         <item
             android:id="@+id/nav_home"
             android:icon="@drawable/ic_credit_card_black_24dp"
-            android:title="My Cards" />
+            android:title="Dashboard" />
         <item
             android:id="@+id/nav_gallery"
             android:icon="@drawable/ic_account_balance_black_24dp"
@@ -15,15 +15,17 @@
         <item
             android:id="@+id/nav_slideshow"
             android:icon="@drawable/ic_account_balance_wallet_black_24dp"
-            android:title="Scan to Pay" />
+            android:title="Pay" />
+
+        <item
+            android:id="@+id/nav_share"
+            android:icon="@drawable/ic_photo_size_select_large_black_24dp"
+            android:title="Get Paid" />
         <item
             android:id="@+id/nav_tools"
             android:icon="@drawable/ic_history_black_24dp"
             android:title="Payments History" />
-        <item
-            android:id="@+id/nav_share"
-            android:icon="@drawable/ic_photo_size_select_large_black_24dp"
-            android:title="@string/menu_share" />
+
 
     </group>
 

@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -37,7 +38,7 @@ public class GalleryFragment extends Fragment {
     private DatabaseReference databaseReference;
     DatabaseHelper myDb;
     private GalleryViewModel galleryViewModel;
-    CardView addCard, removeCard;
+    Button addCard, removeCard;
     TextView bankname;
     TextView username;
     TextView accountnumber;
@@ -64,8 +65,8 @@ public class GalleryFragment extends Fragment {
                 ViewModelProviders.of(this).get(GalleryViewModel.class);
         View root = inflater.inflate(R.layout.fragment_gallery, container, false);
         myDb = new DatabaseHelper(getContext());
-        addCard = (CardView) root.findViewById(R.id.addCard);
-        removeCard = (CardView) root.findViewById(R.id.removeCard);
+        addCard = (Button) root.findViewById(R.id.addCard);
+        removeCard = (Button) root.findViewById(R.id.removeCard);
         bankname = root.findViewById(R.id.bankname);
         username =  root.findViewById(R.id.username) ;
         accountnumber =  root.findViewById(R.id.accountnumber) ;

@@ -74,14 +74,7 @@ public class PayActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pay);
 
-        name1= (TextView) findViewById(R.id.name);
-        phonenumber1= (TextView) findViewById(R.id.phonenumber);
         buttonload = (Button) findViewById(R.id.buttonload);
-
-        String name = getIntent().getStringExtra("name");
-        String phonenumber = getIntent().getStringExtra("phonenumber");
-        name1.setText(name);
-        phonenumber1.setText(phonenumber);
 
         buttonload.setOnClickListener(new View.OnClickListener() {
             @Override

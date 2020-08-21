@@ -1,120 +1,116 @@
-<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:backgroundTint="@color/black_overlay"
-    android:background="@color/black_overlay"
-    android:paddingLeft="20dp"
-    android:paddingRight="20dp"
-    android:layout_height="match_parent">
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
-        android:fontFamily="@font/calibri"
-        android:text="Send Money"
-        android:textColor="#171D33"
-        android:textSize="28sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginLeft="16dp" />
-
-    <RelativeLayout
-        android:id="@+id/relativeLayout1"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/cameraPreview"
-        android:layout_below="@+id/imageView1"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
-        android:layout_marginTop="30dp">
+        android:backgroundTint="@color/black_overlay"
+        android:background="@color/black_overlay"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:layout_height="match_parent">
 
 
-
-
-        <ImageView
-            android:id="@+id/imageView_userIcon"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:background="@color/colorPrimary"
-            android:padding="8dp"
-            android:src="@drawable/ic_attach_money_black_24dp"
-            android:tint="@color/common_google_signin_btn_text_dark_pressed" />
-
-        <EditText
-            android:id="@+id/amount"
+        <TextView
+            android:layout_width="match_parent"
+            android:id="@+id/phonenumber"
+            android:textSize="5dp"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:text=""/>
+        <RelativeLayout
+            android:id="@+id/relativeLayout1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/imageView_userIcon"
-            android:layout_alignParentTop="true"
-            android:layout_toRightOf="@+id/imageView_userIcon"
-            android:background="@color/common_google_signin_btn_text_light_disabled"
-            android:paddingLeft="20dp"
-            android:textSize="15sp"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:hint="AMOUNT" />
+            android:layout_above="@+id/cameraPreview"
+            android:layout_below="@+id/imageView1"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            >
 
-        <RadioGroup
+            <ImageView
+                android:id="@+id/imageView_userIcon"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/blueroundedbuttonshape"
+                android:padding="8dp"
+                android:src="@drawable/ic_attach_money_black_24dp"
+                android:tint="@color/common_google_signin_btn_text_dark_pressed" />
+
+            <EditText
+                android:id="@+id/amount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/imageView_userIcon"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/imageView_userIcon"
+                android:background="@drawable/whiteroundedbuttonshape"
+                android:paddingLeft="20dp"
+                android:textSize="15sp"
+                android:ems="10"
+                android:fontFamily="@font/gotham"
+                android:inputType="textPersonName"
+                android:hint="Amount" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/amount"
+                android:id="@+id/radioGroup"
+                android:orientation="horizontal">
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Bank Account"
+                    android:fontFamily="@font/gotham"
+                    android:id="@+id/bankAccount"/>
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/gotham"
+                    android:text="Mobile Wallet"
+                    android:id="@+id/mobileWallet"/>
+
+            </RadioGroup>
+
+        </RelativeLayout>
+
+
+
+        <SurfaceView
+            android:id="@+id/cameraPreview"
+            android:layout_centerInParent="true"
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="125dp" />
+
+        <TextView
+            android:id="@+id/scanResult"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/amount"
-            android:id="@+id/radioGroup"
-            android:orientation="horizontal">
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Bank Account"
-                android:id="@+id/bankAccount"/>
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Mobile Wallet"
-                android:id="@+id/mobileWallet"/>
+            android:layout_below="@+id/cameraPreview"
+            android:layout_marginTop="10dp"
+            android:text="@string/result_text_default"
+            android:fontFamily="@font/gotham"
+            android:textAlignment="center"
+            android:background="@drawable/whiteroundedbuttonshape"
+            android:textColor="@color/black_overlay"
+            android:textColorLink="@color/black_overlay"
+            />
+        <Button
+            android:id="@+id/buttonload"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/blackroundedbuttonshape"
+            android:fontFamily="@font/gotham"
+            android:layout_below="@+id/scanResult"
+            android:text="Make Payment"
+            android:textColor="@color/common_google_signin_btn_text_dark_pressed" />
 
-        </RadioGroup>
+
+
+
 
     </RelativeLayout>
-
-
-
-    <SurfaceView
-        android:id="@+id/cameraPreview"
-        android:layout_centerInParent="true"
-        android:layout_width="match_parent"
-        android:layout_height="400dp"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="125dp" />
-    <TextView
-        android:id="@+id/scanResult"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/cameraPreview"
-        android:layout_marginTop="10dp"
-        android:text="@string/result_text_default"
-        android:textAlignment="center"
-        android:textColor="@color/black_overlay"
-        android:textColorLink="@color/black_overlay"
-        tools:layout_editor_absoluteX="189dp"
-        tools:layout_editor_absoluteY="632dp" />
-    <Button
-        android:id="@+id/buttonload"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
-        android:background="@drawable/blackroundedbuttonshape"
-        android:fontFamily="sans-serif-medium"
-        android:layout_below="@+id/scanResult"
-        android:text="Make Payment"
-        android:textColor="@color/common_google_signin_btn_text_dark_pressed" />
-
-
-
-
-</RelativeLayout>

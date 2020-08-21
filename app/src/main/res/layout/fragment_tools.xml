@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/white"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     >
 
@@ -15,10 +16,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="24dp"
-        android:fontFamily="@font/calibri"
+        android:fontFamily="@font/gotham"
         android:text="Transaction History"
-        android:textColor="#171D33"
-        android:textSize="28sp"
+        android:textColor="@color/colorAccent"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -53,7 +54,7 @@
                     android:id="@+id/relativeLayout2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/item_image"
+
                     android:layout_marginLeft="30dp"
                     android:layout_marginRight="30dp"
                     android:layout_marginTop="10dp">
@@ -62,7 +63,7 @@
                         android:id="@+id/search_btn"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
-                        android:background="@color/colorAccent"
+                        android:background="@drawable/blueroundedbuttonshape"
                         android:padding="8dp"
                         android:src="@drawable/ic_search_black_24dp"
                         android:tint="@color/common_google_signin_btn_text_dark_pressed" />
@@ -73,7 +74,7 @@
                         android:layout_height="wrap_content"
                         android:layout_alignBottom="@+id/search_btn"
                         android:layout_alignParentTop="true"
-                        android:background="@color/common_google_signin_btn_text_light_disabled"
+                        android:background="@drawable/whiteroundedbuttonshape"
                         android:paddingLeft="20dp"
                         android:textSize="15sp"
                         android:layout_toRightOf="@+id/search_btn"

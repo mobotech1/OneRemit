@@ -1,27 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@drawable/digi"
     android:layout_height="match_parent"
-    android:background="#ffffff">
+    >
 
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            xmlns:app="http://schemas.android.com/apk/res-auto"
-            xmlns:card_view="http://schemas.android.com/tools"
             app:cardElevation="10dp"
             app:cardCornerRadius="10dp"
+            android:layout_gravity="center"
             android:layout_margin="5dp"
-            card_view:cardCornerRadius="12dp"
-            card_view:cardElevation="3dp"
-            card_view:contentPadding="4dp"
+            android:layout_marginTop="100dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
             app:cardBackgroundColor="@color/backgroundcolor"
             android:foreground="?selectableItemBackground"
             android:clickable="true">
@@ -30,6 +26,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+
                 android:padding="16dp"
                 >
 
@@ -41,7 +38,7 @@
                     android:layout_alignParentTop="true"
                     android:layout_marginRight="16dp"
                     android:src="@mipmap/ic_launcher_round"
-                    app:civ_border_color="#FF000000"
+                    app:civ_border_color="@color/colorAccent"
                     app:civ_border_width="2dp" />
 
 
@@ -51,18 +48,21 @@
                     android:layout_height="wrap_content"
                     android:text="Digiplay Solutions 2020"
                     android:id="@+id/description"
+                    android:fontFamily="@font/gotham"
                     android:layout_below="@+id/image"
-                    android:textColor="@color/black_overlay"
-                    android:textSize="15sp"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:layout_marginBottom="10dp"
                     />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="About OneRemit: Primary Industry: Financial Software
- \n OneRemit is QR Technology based Mobile EPOS System with Bank and Wallet account integration. \n
+                    android:text="About Digipay: \n\nPrimary Industry: Financial Software
+ \n Digipay is QR Technology based Mobile EPOS System with Bank and Wallet account integration. \n
 "
                     android:id="@+id/type"
+                    android:fontFamily="@font/gotham"
                     android:layout_below="@+id/description"
                     android:textColor="@color/colorAccent"
                     android:textSize="15sp"
@@ -71,37 +71,29 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="What does it do?"
+                    android:text="What is Digipay?"
                     android:id="@+id/terms"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/gotham"
                     android:layout_below="@+id/type"
-                    android:textColor="@color/colorBlack"
                     android:textSize="15sp"
                     />
                 <TextView
+
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="It is a mobile payment solution that makes it easy and safe to pay and receive payments in a store, online, at home, and on the go. No need for physical cards or cash– just simple payments in a single scan. Your PayUp app uses your phone's camera to scan a Merchant Code (a unique QR code). Stores have their own Merchant Codes, and scanning these codes allows you to pay them. PayUp is free to use and aims to be integrated to all banks and mobile wallets. Our scan to pay feature is  a time saving solution and promotes financial inclusion too
-"
+                    android:text="It is a mobile payment solution that makes it easy and safe to pay and receive payments in a store, online, at home, and on the go. No need for physical cards or cash– just simple payments in a single scan. Your PayUp app uses your phone's camera to scan a Merchant Code (a unique QR code). Stores have their own Merchant Codes, and scanning these codes allows you to pay them. PayUp is free to use and aims to be integrated to all banks and mobile wallets. Our scan to pay feature is  a time saving solution and promotes financial inclusion too"
+                    android:fontFamily="@font/gotham"
                     android:id="@+id/details"
                     android:layout_below="@+id/terms"
                     android:textColor="@color/colorAccent"
                     android:textSize="15sp"
                     />
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Lets connect, have fun and grow our businesses.\n Thank you for choosing us :) \n To register as a merchant contact +263 719 685 644"
-                    android:id="@+id/extra"
-                    android:layout_below="@+id/details"
-                    android:textColor="@color/black_overlay"
-                    android:textSize="15sp"
-                    />
             </RelativeLayout>
 
         </androidx.cardview.widget.CardView>
-    </ScrollView>
 
 
 
-</RelativeLayout>
+</LinearLayout>

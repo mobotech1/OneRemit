@@ -55,7 +55,7 @@ public class OTP extends AppCompatActivity {
         super.onStart();
         FirebaseApp.initializeApp(this);
         if (FirebaseAuth.getInstance().getCurrentUser() != null) {
-            Intent intent = new Intent(this, MainActivity.class);
+            Intent intent = new Intent(this, HomeSwitcher.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
 
             startActivity(intent);

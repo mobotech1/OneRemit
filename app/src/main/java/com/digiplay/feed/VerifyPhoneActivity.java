@@ -43,7 +43,7 @@ public class VerifyPhoneActivity extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
 
-        progressBar = findViewById(R.id.progressbar);
+       // progressBar = findViewById(R.id.progressbar);
         editText = findViewById(R.id.editTextCode);
         FirebaseApp.initializeApp(this);
         String phonenumber = getIntent().getStringExtra("phonenumber");
@@ -79,7 +79,7 @@ public class VerifyPhoneActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             simpleNotification();
-                            Intent intent = new Intent(VerifyPhoneActivity.this, MainActivity.class);
+                            Intent intent = new Intent(VerifyPhoneActivity.this, HomeSwitcher.class);
                             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
 
                             startActivity(intent);

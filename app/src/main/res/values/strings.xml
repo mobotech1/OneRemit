@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">PayUp</string>
+    <string name="app_name">Digipay</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Android Studio</string>
@@ -7,12 +7,7 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
-    <string name="menu_home">My Cards</string>
-    <string name="menu_gallery">My Account</string>
-    <string name="menu_slideshow">Scan to Pay</string>
-    <string name="menu_tools">Payment History</string>
-    <string name="menu_share">QR Generator</string>
-    <string name="menu_send">About</string>
+
     <string name="result_text_default">Focus Camera on QR Code</string>
 
 </resources>

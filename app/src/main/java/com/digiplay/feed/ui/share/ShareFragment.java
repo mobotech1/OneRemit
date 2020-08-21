@@ -56,119 +56,66 @@ public class ShareFragment extends Fragment {
         View root = inflater.inflate(R.layout.fragment_share, container, false);
 
 
-            myDb = new DatabaseHelper(getContext());
-            qrImage = (ImageView) root.findViewById(R.id.QR_Image);
-            edtValue = (EditText) root.findViewById(R.id.edt_value);
-            start = (Button) root.findViewById(R.id.start);
-            save = (Button) root.findViewById(R.id.save);
+        //  myDb = new DatabaseHelper(getContext());
+        // qrImage = (ImageView) root.findViewById(R.id.QR_Image);
+        edtValue = (EditText) root.findViewById(R.id.edt_value);
+        start = (Button) root.findViewById(R.id.start);
+        save = (Button) root.findViewById(R.id.save);
 
-            getCards();
+        // getCards();
 
-            start.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    inputValue = edtValue.getText().toString().trim();
+        start.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                inputValue = edtValue.getText().toString().trim();
 
-                    // If statement for different shortcodes
+                // If statement for different shortcodes
 
 
-                    String inputValue1 = inputValue + Uri.encode("#");
+                String inputValue1 = inputValue + Uri.encode("#");
 
-                    if (inputValue1.length() > 0) {
-                        WindowManager manager = (WindowManager) getActivity().getSystemService(WINDOW_SERVICE);
-                        Display display = manager.getDefaultDisplay();
-                        Point point = new Point();
-                        display.getSize(point);
-                        int width = point.x;
-                        int height = point.y;
-                        int smallerDimension = width < height ? width : height;
-                        smallerDimension = smallerDimension * 3 / 4;
+                if (inputValue1.length() > 0) {
+                    WindowManager manager = (WindowManager) getActivity().getSystemService(WINDOW_SERVICE);
+                    Display display = manager.getDefaultDisplay();
+                    Point point = new Point();
+                    display.getSize(point);
+                    int width = point.x;
+                    int height = point.y;
+                    int smallerDimension = width < height ? width : height;
+                    smallerDimension = smallerDimension * 3 / 4;
 
-                        qrgEncoder = new QRGEncoder(
-                                inputValue1, null,
-                                QRGContents.Type.TEXT,
-                                smallerDimension);
-                        try {
-                            bitmap = qrgEncoder.encodeAsBitmap();
-                            qrImage.setImageBitmap(bitmap);
-                        } catch (WriterException e) {
-                            Log.v(TAG, e.toString());
-                        }
-                    } else {
-                        edtValue.setError("Required");
-                    }
-                }
-            });
-
-            save.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    boolean save;
-                    String result;
+                    qrgEncoder = new QRGEncoder(
+                            inputValue1, null,
+                            QRGContents.Type.TEXT,
+                            smallerDimension);
                     try {
-                        save = QRGSaver.save(savePath, edtValue.getText().toString().trim(), bitmap, QRGContents.ImageType.IMAGE_JPEG);
-                        result = save ? "Image Saved" : "Image Not Saved";
-                        Toast.makeText(getContext(), result, Toast.LENGTH_LONG).show();
-                    } catch (Exception e) {
-                        e.printStackTrace();
+                        bitmap = qrgEncoder.encodeAsBitmap();
+                        qrImage.setImageBitmap(bitmap);
+                    } catch (WriterException e) {
+                        Log.v(TAG, e.toString());
                     }
+                } else {
+                    edtValue.setError("Required");
                 }
-            });
+            }
+        });
+
+        save.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                boolean save;
+                String result;
+                try {
+                    save = QRGSaver.save(savePath, edtValue.getText().toString().trim(), bitmap, QRGContents.ImageType.IMAGE_JPEG);
+                    result = save ? "Image Saved" : "Image Not Saved";
+                    Toast.makeText(getContext(), result, Toast.LENGTH_LONG).show();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
 
         return root;
-    }
-
-    private void getCards() {
-
-
-                        Cursor dat = myDb.getCards();
-                        if(dat.getCount() == 0) {
-                            // show message
-                            //showMessage("Error","Nothing found");
-
-                            Toast.makeText(getContext(),"Error ,No Cards found",Toast.LENGTH_LONG);
-                            return;
-                        }
-
-                        //   StringBuffer buffer = new StringBuffer();
-                        while (dat.moveToNext()) {
-
-                            String accountnumber1 = (dat.getString(3));
-                            accountnumber.setText(accountnumber1);
-
-
-
-                        }
-
-
-        String inputValue1 = accountnumber + Uri.encode("#");
-
-        if (inputValue1.length() > 0) {
-            WindowManager manager = (WindowManager) getActivity().getSystemService(WINDOW_SERVICE);
-            Display display = manager.getDefaultDisplay();
-            Point point = new Point();
-            display.getSize(point);
-            int width = point.x;
-            int height = point.y;
-            int smallerDimension = width < height ? width : height;
-            smallerDimension = smallerDimension * 3 / 4;
-
-            qrgEncoder = new QRGEncoder(
-                    inputValue1, null,
-                    QRGContents.Type.TEXT,
-                    smallerDimension);
-            try {
-                bitmap = qrgEncoder.encodeAsBitmap();
-                qrImage.setImageBitmap(bitmap);
-            } catch (WriterException e) {
-                Log.v(TAG, e.toString());
-            }
-        } else {
-            edtValue.setError("Required");
-        }
-
-        // Show all data
-        // showMessage("Data",buffer.toString());
     }
 }
 

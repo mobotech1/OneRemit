@@ -13,26 +13,22 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/white"
         android:orientation="vertical">
         <TextView
             android:id="@+id/textView3"
             android:layout_width="wrap_content"
+            android:layout_gravity="center"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="24dp"
-            android:fontFamily="@font/calibri"
+            android:fontFamily="@font/gotham"
             android:text="Pay Merchant"
-            android:textColor="#171D33"
+            android:textColor="@color/colorAccent"
             android:textSize="28sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             android:layout_marginLeft="16dp" />
-
-
-
-
 
     </LinearLayout>
     <TextView
@@ -57,7 +53,7 @@
             android:id="@+id/imageView_userIcon"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:background="@color/colorPrimary"
+            android:background="@drawable/blueroundedbuttonshape"
             android:padding="8dp"
             android:src="@drawable/ic_attach_money_black_24dp"
             android:tint="@color/common_google_signin_btn_text_dark_pressed" />
@@ -69,12 +65,13 @@
             android:layout_alignBottom="@+id/imageView_userIcon"
             android:layout_alignParentTop="true"
             android:layout_toRightOf="@+id/imageView_userIcon"
-            android:background="@color/common_google_signin_btn_text_light_disabled"
+            android:background="@drawable/whiteroundedbuttonshape"
             android:paddingLeft="20dp"
             android:textSize="15sp"
             android:ems="10"
+            android:fontFamily="@font/gotham"
             android:inputType="textPersonName"
-            android:hint="AMOUNT" />
+            android:hint="Amount" />
 
         <RadioGroup
             android:layout_width="match_parent"
@@ -86,10 +83,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Bank Account"
+                android:fontFamily="@font/gotham"
                 android:id="@+id/bankAccount"/>
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/gotham"
                 android:text="Mobile Wallet"
                 android:id="@+id/mobileWallet"/>
 
@@ -103,7 +102,7 @@
         android:id="@+id/cameraPreview"
         android:layout_centerInParent="true"
         android:layout_width="match_parent"
-        android:layout_height="400dp"
+        android:layout_height="350dp"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="125dp" />
 
@@ -114,11 +113,12 @@
         android:layout_below="@+id/cameraPreview"
         android:layout_marginTop="10dp"
         android:text="@string/result_text_default"
+        android:fontFamily="@font/gotham"
         android:textAlignment="center"
+        android:background="@drawable/whiteroundedbuttonshape"
         android:textColor="@color/black_overlay"
         android:textColorLink="@color/black_overlay"
-        tools:layout_editor_absoluteX="189dp"
-        tools:layout_editor_absoluteY="632dp" />
+     />
     <Button
         android:id="@+id/buttonload"
         android:layout_width="match_parent"
@@ -126,7 +126,7 @@
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
         android:background="@drawable/blackroundedbuttonshape"
-        android:fontFamily="sans-serif-medium"
+        android:fontFamily="@font/gotham"
         android:layout_below="@+id/scanResult"
         android:text="Make Payment"
         android:textColor="@color/common_google_signin_btn_text_dark_pressed" />
