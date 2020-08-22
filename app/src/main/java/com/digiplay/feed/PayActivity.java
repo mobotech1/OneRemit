@@ -75,6 +75,7 @@ public class PayActivity extends AppCompatActivity {
         setContentView(R.layout.activity_pay);
 
         buttonload = (Button) findViewById(R.id.buttonload);
+        amount = (EditText) findViewById(R.id.amount);
 
         buttonload.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -163,12 +164,7 @@ public class PayActivity extends AppCompatActivity {
                                 vibrator.vibrate(100);
                                 cameraSource.stop();
                                 Barcode searchText = qrcodes.valueAt(0);
-
                                 scanResult.setText(qrcodes.valueAt(0).displayValue);
-
-
-
-
 
                             }
                         });
@@ -190,10 +186,10 @@ public class PayActivity extends AppCompatActivity {
         string = scanResult.getText().toString().trim();
 
         String amountcharge = amount.getText().toString();
-        Integer  commission = Integer.parseInt(amountcharge);
+        //Integer  commission = Integer.parseInt(amountcharge);
+        //double payment = commission + (commission*0.05);
 
-        double payment = commission + (commission*0.05);
-
+        double payment = Double.parseDouble(amountcharge);
         number = "tel:" + string + payment + Uri.encode("#");
 
         try {

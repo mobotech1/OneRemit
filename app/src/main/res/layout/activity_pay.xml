@@ -115,7 +115,6 @@
         android:text="@string/result_text_default"
         android:fontFamily="@font/gotham"
         android:textAlignment="center"
-        android:background="@drawable/whiteroundedbuttonshape"
         android:textColor="@color/black_overlay"
         android:textColorLink="@color/black_overlay"
      />
