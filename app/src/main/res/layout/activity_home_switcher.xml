@@ -192,7 +192,7 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/gotham"
                         android:gravity="center"
-                        android:text="Pay Merchant"
+                        android:text="Pay"
                         android:textColor="#3B414B"
                         android:textSize="16sp" />
 
@@ -313,7 +313,7 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/gotham"
                         android:gravity="center"
-                        android:text="Transactions"
+                        android:text="History"
                         android:textColor="#3B414B"
                         android:textSize="16sp" />
 
@@ -355,7 +355,7 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/gotham"
                         android:gravity="center"
-                        android:text="Service Terms"
+                        android:text="Service"
                         android:textColor="#3B414B"
                         android:textSize="16sp" />
 

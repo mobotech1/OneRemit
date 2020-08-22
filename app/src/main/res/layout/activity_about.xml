@@ -83,7 +83,7 @@
 
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="It is a mobile payment solution that makes it easy and safe to pay and receive payments in a store, online, at home, and on the go. No need for physical cards or cash– just simple payments in a single scan. Your PayUp app uses your phone's camera to scan a Merchant Code (a unique QR code). Stores have their own Merchant Codes, and scanning these codes allows you to pay them. PayUp is free to use and aims to be integrated to all banks and mobile wallets. Our scan to pay feature is  a time saving solution and promotes financial inclusion too"
+                android:text="It is a mobile payment solution that makes it easy and safe to pay and receive payments in a store, online, at home, and on the go. No need for physical cards or cash– just simple payments in a single scan. Your Digipay app uses your phone's camera to scan a Merchant Code (a unique QR code). Stores have their own Merchant Codes, and scanning these codes allows you to pay them. Digipay is free to use and aims to be integrated to all banks and mobile wallets. Our scan to pay feature is  a time saving solution and promotes financial inclusion too"
                 android:fontFamily="@font/gotham"
                 android:id="@+id/details"
                 android:layout_below="@+id/terms"

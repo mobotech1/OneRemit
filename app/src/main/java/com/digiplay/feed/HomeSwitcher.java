@@ -74,7 +74,7 @@ public class HomeSwitcher extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //Cardview on click activity Pay Bill
-                Intent intent = new Intent(HomeSwitcher.this, PayActivity.class);
+                Intent intent = new Intent(HomeSwitcher.this, PayBill.class);
                 startActivity(intent);
 
             }
