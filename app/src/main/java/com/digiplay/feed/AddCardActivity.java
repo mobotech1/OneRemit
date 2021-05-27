@@ -40,8 +40,8 @@ public class AddCardActivity extends AppCompatActivity {
     Button buttonpost, upload ,buttondelete,buttonupdate;
     private ImageView upload_pic;
     ProgressDialog progressDialog ;
-    FirebaseDatabase database;
-    DatabaseReference ref;
+//    FirebaseDatabase database;
+//    DatabaseReference ref;
     Model model;
 
     @Override
@@ -62,9 +62,9 @@ public class AddCardActivity extends AppCompatActivity {
 
         progressDialog = new ProgressDialog(AddCardActivity.this);
         buttondelete = (Button) findViewById(R.id.buttondelete);
-
-        database = FirebaseDatabase.getInstance();
-        ref = database.getReference("Model");
+//
+//        database = FirebaseDatabase.getInstance();
+//        ref = database.getReference("Model");
         model=new Model();
 
         getCards();
@@ -72,8 +72,8 @@ public class AddCardActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //Cardview on click activity
-                String key = FirebaseAuth.getInstance().getCurrentUser().getUid();
-                AddData(key);
+//                String key = FirebaseAuth.getInstance().getCurrentUser().getUid();
+//                AddData(key);
             }
         });
 
@@ -81,8 +81,8 @@ public class AddCardActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //Cardview on click activity
-                String key = FirebaseAuth.getInstance().getCurrentUser().getUid();
-               DeleteData(key);
+//                String key = FirebaseAuth.getInstance().getCurrentUser().getUid();
+//               DeleteData(key);
             }
         });
 
@@ -97,9 +97,9 @@ public class AddCardActivity extends AppCompatActivity {
         {
             phonenumber.setError("Please enter phone number to verify the acoount.");
             return;
+//        ref.child("Cards").child(key).removeValue();
         }
-;
-        ref.child("Cards").child(key).removeValue();
+//;
         Toast.makeText(this, "Profile Deleted, Sorry to see you go :(", Toast.LENGTH_LONG).show();
 
 
@@ -134,7 +134,7 @@ public class AddCardActivity extends AppCompatActivity {
                                                phonenumber.getText().toString() );
 
 
-                                           ref.child("Cards").child(key).setValue(model);
+                                         //  ref.child("Cards").child(key).setValue(model);
 
                                            if(isInserted == true)
 

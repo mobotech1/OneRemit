@@ -78,18 +78,22 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/amount"
             android:id="@+id/radioGroup"
-            android:orientation="horizontal">
+            android:textAlignment="center"
+            android:orientation="horizontal"
+            android:layout_gravity="center_horizontal">
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Bank Account"
-                android:fontFamily="@font/gotham"
-                android:id="@+id/bankAccount"/>
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/gotham"
+                android:textAlignment="center"
                 android:text="Mobile Wallet"
+                android:fontFamily="@font/gotham"
+                android:id="@+id/bankAccount"
+                android:layout_gravity="center_horizontal" />
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gotham"
+                android:text="Bank Account"
                 android:id="@+id/mobileWallet"/>
 
         </RadioGroup>
@@ -117,7 +121,7 @@
         android:textAlignment="center"
         android:textColor="@color/black_overlay"
         android:textColorLink="@color/black_overlay"
-     />
+        android:layout_gravity="center_horizontal" />
     <Button
         android:id="@+id/buttonload"
         android:layout_width="match_parent"

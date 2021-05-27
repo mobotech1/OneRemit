@@ -46,7 +46,7 @@ public class PayActivity extends AppCompatActivity {
     public String string;
     final int RequestCameraPermissionID = 1001;
     //firebase auth object
-    private FirebaseAuth firebaseAuth;
+    //private FirebaseAuth firebaseAuth;
     private EditText amount;
     Button buttonload;
 
@@ -86,23 +86,55 @@ public class PayActivity extends AppCompatActivity {
                     amount.setError("Please enter amount your are paying.");
                     return;
                 } else {
-                    makePayment();
+                    //makePayment();
+                    String scanresult = (String) scanResult.getText();
+
+
+                    String string = scanResult.getText().toString().trim();
+
+                    String amountcharge = amount.getText().toString();
+
+
+                    double payment = Double.parseDouble(amountcharge);
+                    number = "tel:" + string + payment + Uri.encode("#");
+
+                    try {
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                            if (checkSelfPermission(Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+                                // TODO: Consider calling
+                                //    Activity#requestPermissions
+                                // here to request the missing permissions, and then overriding
+                                //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+                                //                                          int[] grantResults)
+                                // to handle the case where the user grants the permission. See the documentation
+                                // for Activity#requestPermissions for more details.
+                                return;
+                            }
+                        }
+                        startActivity(new Intent(Intent.ACTION_CALL, Uri.parse(number)));
+
+
+                    } catch (ActivityNotFoundException activityException) {
+                        Log.e("failed", "QR Code Error");
+
+
+                    }
                 }
             }
         });
 
 
-        //initializing firebase authentication object
-        firebaseAuth = FirebaseAuth.getInstance();
+//        initializing firebase authentication object
+//        firebaseAuth = FirebaseAuth.getInstance();
 
         //if the user is not logged in
         //that means current user will return null
-        if (firebaseAuth.getCurrentUser() == null) {
-            //closing this activity
-            //  finish();
-            //starting login activity
-            startActivity(new Intent(PayActivity.this, OTP.class));
-        } else {
+//        if (firebaseAuth.getCurrentUser() == null) {
+//            //closing this activity
+//            //  finish();
+//            //starting login activity
+//            startActivity(new Intent(PayActivity.this, OTP.class));
+//        } else {
             surfaceView = (SurfaceView) findViewById(R.id.cameraPreview);
             scanResult = (TextView) findViewById(R.id.scanResult);
             amount = (EditText) findViewById(R.id.amount);
@@ -163,8 +195,9 @@ public class PayActivity extends AppCompatActivity {
                                 Vibrator vibrator = (Vibrator) getApplicationContext().getSystemService(Context.VIBRATOR_SERVICE);
                                 vibrator.vibrate(100);
                                 cameraSource.stop();
-                                Barcode searchText = qrcodes.valueAt(0);
-                                scanResult.setText(qrcodes.valueAt(0).displayValue);
+                                Barcode scanresult = qrcodes.valueAt(0);
+                             //   scanResult.setText(qrcodes.valueAt(0).displayValue);
+                              //  System.out.println(scanResult);
 
                             }
                         });
@@ -172,7 +205,7 @@ public class PayActivity extends AppCompatActivity {
 
                 }
             });
-        }
+      // }
 
 
     }
@@ -180,41 +213,39 @@ public class PayActivity extends AppCompatActivity {
     private void makePayment() {
 
 
-        String searchtext = (String) scanResult.getText();
-
-
-        string = scanResult.getText().toString().trim();
-
-        String amountcharge = amount.getText().toString();
-        //Integer  commission = Integer.parseInt(amountcharge);
-        //double payment = commission + (commission*0.05);
-
-        double payment = Double.parseDouble(amountcharge);
-        number = "tel:" + string + payment + Uri.encode("#");
-
-        try {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                if (checkSelfPermission(Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
-                    // TODO: Consider calling
-                    //    Activity#requestPermissions
-                    // here to request the missing permissions, and then overriding
-                    //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-                    //                                          int[] grantResults)
-                    // to handle the case where the user grants the permission. See the documentation
-                    // for Activity#requestPermissions for more details.
-                    return;
-                }
-            }
-            startActivity(new Intent(Intent.ACTION_CALL, Uri.parse(number)));
-
-
-        } catch (ActivityNotFoundException activityException) {
-            Log.e("failed", "QR Code Error");
-
-
-        }
-
-
+//        String scanresult = (String) scanResult.getText();
+//
+//
+//        String string = scanResult.getText().toString().trim();
+//
+//        String amountcharge = amount.getText().toString();
+//        //Integer  commission = Integer.parseInt(amountcharge);
+//        //double payment = commission + (commission*0.05);
+//
+//        double payment = Double.parseDouble(amountcharge);
+//        number = "tel:" + string + payment + Uri.encode("#");
+//
+//        try {
+//            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+//                if (checkSelfPermission(Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+//                    // TODO: Consider calling
+//                    //    Activity#requestPermissions
+//                    // here to request the missing permissions, and then overriding
+//                    //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+//                    //                                          int[] grantResults)
+//                    // to handle the case where the user grants the permission. See the documentation
+//                    // for Activity#requestPermissions for more details.
+//                    return;
+//                }
+//            }
+//            startActivity(new Intent(Intent.ACTION_CALL, Uri.parse(number)));
+//
+//
+//        } catch (ActivityNotFoundException activityException) {
+//            Log.e("failed", "QR Code Error");
+//
+//
+//        }
 
     }
 }

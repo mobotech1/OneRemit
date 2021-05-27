@@ -1,8 +1,10 @@
 package com.digiplay.feed;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -42,13 +44,26 @@ public class HomeSwitcher extends AppCompatActivity {
             public void onClick(View v) {
                 //Cardview on click activity signout
 
-                FirebaseAuth.getInstance().signOut();
-                Intent intent = new Intent(HomeSwitcher.this, SplashScreen.class);
-                startActivity(intent);
-                finish();
-                return;
 
 
+                    AlertDialog.Builder builder = new AlertDialog.Builder(HomeSwitcher.this);
+                    builder.setTitle("Sign Out");
+                    builder.setIcon(R.mipmap.ic_launcher);
+                    builder.setMessage("Are you sure you want to sign out?");
+                    AlertDialog alert1 = builder.create();
+                    alert1.setButton(DialogInterface.BUTTON_POSITIVE, "Yes", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            FirebaseAuth.getInstance().signOut();
+                            Intent intent = new Intent(HomeSwitcher.this, SplashScreen.class);
+                            startActivity(intent);
+                            finish();
+                            return;
+                        }
+                    });
+
+                    alert1.setCanceledOnTouchOutside(false);
+                    alert1.show();
 
             }
         });
@@ -92,7 +107,7 @@ public class HomeSwitcher extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //Cardview on click activity terms
-                Intent intent = new Intent(HomeSwitcher.this,  About.class);
+                Intent intent = new Intent(HomeSwitcher.this,  TermsOfService.class);
                 startActivity(intent);
 
             }

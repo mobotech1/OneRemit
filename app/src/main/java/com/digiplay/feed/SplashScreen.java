@@ -19,7 +19,6 @@ public class SplashScreen extends AppCompatActivity {
     Button pay, my_account;
 
     ProgressBar splashProgress;
-
     // private static int SPLASH_TIME_OUT = 3000; //This is 3 seconds
 
     @Override
@@ -28,29 +27,22 @@ public class SplashScreen extends AppCompatActivity {
         setContentView(R.layout.activity_splash_screen);
         FirebaseApp.initializeApp(this);
 
-
         pay = findViewById(R.id.pay);
         my_account = findViewById(R.id.my_account);
-
 
         pay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 Intent intent = new Intent(SplashScreen.this, PayActivity.class);
                 startActivity(intent);
-
             }
         });
 
         my_account.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(SplashScreen.this, OTP.class);
+                Intent intent = new Intent(SplashScreen.this, HomeSwitcher.class);
                 startActivity(intent);
-
-
-
             }
         });
 

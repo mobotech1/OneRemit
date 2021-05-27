@@ -16,7 +16,8 @@
             android:layout_height="wrap_content"
             android:textAlignment="center"
             android:textColor="@color/white"
-            android:text=""/>
+            android:text=""
+            android:layout_gravity="center_horizontal" />
         <RelativeLayout
             android:id="@+id/relativeLayout1"
             android:layout_width="match_parent"
@@ -60,14 +61,14 @@
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Bank Account"
+                    android:text="Mobile Wallet"
                     android:fontFamily="@font/gotham"
                     android:id="@+id/bankAccount"/>
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/gotham"
-                    android:text="Mobile Wallet"
+                    android:text="Bank Account"
                     android:id="@+id/mobileWallet"/>
 
             </RadioGroup>

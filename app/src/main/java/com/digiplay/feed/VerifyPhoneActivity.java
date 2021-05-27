@@ -1,11 +1,13 @@
 package com.digiplay.feed;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
 
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
@@ -78,11 +80,31 @@ public class VerifyPhoneActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            simpleNotification();
-                            Intent intent = new Intent(VerifyPhoneActivity.this, HomeSwitcher.class);
-                            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
 
-                            startActivity(intent);
+                            AlertDialog.Builder builder = new AlertDialog.Builder(VerifyPhoneActivity.this);
+                            builder.setTitle("Sign In Success");
+                            builder.setIcon(R.mipmap.ic_launcher);
+                            builder.setMessage("Phone Verification Complete");
+                            AlertDialog alert1 = builder.create();
+                            alert1.setButton(DialogInterface.BUTTON_POSITIVE, "Done", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    FirebaseAuth.getInstance().signOut();
+                                    Intent intent = new Intent(VerifyPhoneActivity.this, HomeSwitcher.class);
+                                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                    startActivity(intent);
+                                    finish();
+                                    return;
+                                }
+                            });
+
+                            alert1.setCanceledOnTouchOutside(false);
+                            alert1.show();
+
+
+                          //  Intent intent = new Intent(VerifyPhoneActivity.this, HomeSwitcher.class);
+                            //intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                          //  startActivity(intent);
 
                         } else {
                             Toast.makeText(VerifyPhoneActivity.this, task.getException().getMessage(), Toast.LENGTH_LONG).show();
@@ -91,36 +113,9 @@ public class VerifyPhoneActivity extends AppCompatActivity {
                 });
     }
 
-    private void simpleNotification() {
-
-        int notificationId =0;
-
-        NotificationCompat.Builder builder= new NotificationCompat.Builder(this)
-
-                .setSmallIcon(R.drawable.payupicon)
-                .setLargeIcon(BitmapFactory.decodeResource(getResources(),R.drawable.payupicon))
-                .setContentTitle("Fast Merchant PayUp")
-                .setContentText("Hi, Welcome to PayUp. Transact faster and more efficiently, Payments made easier. Digiplay Solutios 2020")
-                .setAutoCancel(true)
-                .setDefaults(NotificationCompat.DEFAULT_ALL);
-
-        NotificationManager notificationManager = (NotificationManager)getSystemService(NOTIFICATION_SERVICE);
-
-
-
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-
-            String channelid ="YOUR_CHANNEL_ID";
-            NotificationChannel channel= new NotificationChannel(channelid,"Channel Human Readable", NotificationManager.IMPORTANCE_DEFAULT);
-
-            notificationManager.createNotificationChannel(channel);
-            builder.setChannelId(channelid);
-
-        }
-    }
 
     private void sendVerificationCode(String number) {
-        progressBar.setVisibility(View.VISIBLE);
+       // progressBar.setVisibility(View.VISIBLE);
         PhoneAuthProvider.getInstance().verifyPhoneNumber(
                 number,
                 60,

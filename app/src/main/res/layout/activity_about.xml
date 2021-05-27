@@ -47,7 +47,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Digiplay Solutions 2020"
+                android:text="Digiplay Solution 2021"
                 android:id="@+id/description"
                 android:fontFamily="@font/gotham"
                 android:layout_below="@+id/image"

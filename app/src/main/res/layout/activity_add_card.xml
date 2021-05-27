@@ -40,6 +40,7 @@
             android:layout_width="350dp"
             android:layout_height="150dp"
             android:layout_margin="10dp">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -127,14 +128,14 @@
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Bank Account"
+            android:text="EcoCash"
             android:fontFamily="@font/gotham"
             android:id="@+id/bankAccount"/>
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/gotham"
-            android:text="Mobile Wallet"
+            android:text="OneMoney"
             android:id="@+id/mobileWallet"/>
 
     </RadioGroup>
@@ -210,7 +211,7 @@
             android:textSize="15sp"
             android:ems="10"
             android:inputType="phone"
-            android:hint="Account number Or Phone Number" />/>
+            android:hint="Account number" />/>
 
     </RelativeLayout>
 
@@ -245,7 +246,7 @@
             android:textSize="15sp"
             android:fontFamily="@font/gotham"
             android:ems="10"
-            android:hint="Select Bank Or Mobile Network"
+            android:hint="Select Bank"
             android:inputType="textPersonName"
 
             />

@@ -4,13 +4,19 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
+import android.Manifest;
+import android.content.ActivityNotFoundException;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -37,6 +43,9 @@ public class PayBill extends AppCompatActivity implements View.OnClickListener {
     private CardView Scan;
     private ImageView QR_Image;
     private static final int SELECT_PHOTO = 100;
+    private EditText amount;
+    public String number;
+    public String string;
     //for easy manipulation of the result
     public String barcode;
 
@@ -48,6 +57,7 @@ public class PayBill extends AppCompatActivity implements View.OnClickListener {
         //cast neccesary variables to their views
         Scan = (CardView) findViewById(R.id.ScanBut);
         QR_Image = (ImageView) findViewById(R.id.QR_Image);
+       // amount = (EditText) findViewById(R.id.amount);
         //set a new custom listener
         Scan.setOnClickListener(this);
         //launch gallery via intent
@@ -117,16 +127,42 @@ public class PayBill extends AppCompatActivity implements View.OnClickListener {
                             builder.setIcon(R.mipmap.ic_launcher);
                             builder.setMessage("" + barcode);
                             AlertDialog alert1 = builder.create();
-                            alert1.setButton(DialogInterface.BUTTON_POSITIVE, "Done", new DialogInterface.OnClickListener() {
+                            alert1.setButton(DialogInterface.BUTTON_POSITIVE, "Proceed", new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
-                                    Intent i = new Intent (getBaseContext(),MainActivity.class);
-                                    startActivity(i);
+
+                                    //initiate payment
+                                    String hash = Uri.encode("#");
+
+                                    number = "tel:" + barcode + hash;
+
+                                    try {
+                                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                                            if (checkSelfPermission(Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+                                                // TODO: Consider calling
+                                                //    Activity#requestPermissions
+                                                // here to request the missing permissions, and then overriding
+                                                //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+                                                //                                          int[] grantResults)
+                                                // to handle the case where the user grants the permission. See the documentation
+                                                // for Activity#requestPermissions for more details.
+                                                return;
+                                            }
+                                        }
+                                        startActivity(new Intent(Intent.ACTION_CALL, Uri.parse(number)));
+
+
+                                    } catch (ActivityNotFoundException activityException) {
+                                        Log.e("failed", "QR Code Error");
+
+
+                                    }
+
+
                                 }
                             });
 
                             alert1.setCanceledOnTouchOutside(false);
-
                             alert1.show();}
                         else
                         {
@@ -138,13 +174,12 @@ public class PayBill extends AppCompatActivity implements View.OnClickListener {
                             alert1.setButton(DialogInterface.BUTTON_POSITIVE, "Done", new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
-                                    Intent i = new Intent (getBaseContext(),MainActivity.class);
+                                    Intent i = new Intent (getBaseContext(),HomeSwitcher.class);
                                     startActivity(i);
                                 }
                             });
 
                             alert1.setCanceledOnTouchOutside(false);
-
                             alert1.show();
 
                         }
@@ -154,13 +189,13 @@ public class PayBill extends AppCompatActivity implements View.OnClickListener {
                         Toast.makeText(getApplicationContext(), "Nothing Found", Toast.LENGTH_SHORT).show();
                         e.printStackTrace();
                     } catch (ChecksumException e) {
-                        Toast.makeText(getApplicationContext(), "Something weird happen, i was probably tired to solve this issue", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Something went wrong, Try again", Toast.LENGTH_SHORT).show();
                         e.printStackTrace();
                     } catch (FormatException e) {
                         Toast.makeText(getApplicationContext(), "Wrong Barcode/QR format", Toast.LENGTH_SHORT).show();
                         e.printStackTrace();
                     } catch (NullPointerException e) {
-                        Toast.makeText(getApplicationContext(), "Something weird happen, i was probably tired to solve this issue", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Something went wrong, Try again", Toast.LENGTH_SHORT).show();
                         e.printStackTrace();
                     }
                 }
